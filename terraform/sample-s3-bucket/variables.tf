@@ -14,6 +14,6 @@ variable "aws_secret_access_key" {
 }
 
 variable "bucket_name" {
-  default = "test-bucket"
+  default = "rli-sample-bucket"
   type = string
 }
