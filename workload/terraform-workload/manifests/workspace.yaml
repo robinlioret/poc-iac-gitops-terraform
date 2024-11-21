@@ -17,7 +17,6 @@ spec:
   workingDirectory: terraform/sample-s3-bucket
   versionControl:
     repository: https://github.com/robinlioret/poc-iac-gitops-terraform.git
-    speculativePlans: true
 
   terraformVariables:
     - name: aws_region
