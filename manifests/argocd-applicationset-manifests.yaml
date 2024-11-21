@@ -11,7 +11,7 @@ spec:
         repoURL: https://github.com/robinlioret/poc-iac-gitops-terraform.git
         revision: HEAD
         files:
-          - path: workload/**/manifest.json
+          - path: workload/**/manifests.json
   template:
     metadata:
       name: "{{ .path.basenameNormalized }}"

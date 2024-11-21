@@ -1,0 +1,17 @@
+apiVersion: app.terraform.io/v1alpha1
+kind: Workspace
+metadata:
+  name: sample-workspace
+spec:
+  name: argocd-workspace
+  organization: rli-personal
+  token:
+    secretKeyRef:
+      name: terraform-organization-token
+      key: token
+  applyMethod: auto
+  allowDestroyPlan: auto
+  description: "ArgoCD generated workspace"
+  deletionPolicy: destroy
+  project:
+    name: poc-gitops-terraform

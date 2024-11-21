@@ -1,0 +1,6 @@
+{
+  "dNamespace": "terraform-workload",
+  "dRepoURL": "https://github.com/robinlioret/poc-iac-gitops-terraform.git",
+  "dTargetRevision": "master",
+  "dPath": "workload/terraform-workload"
+}
