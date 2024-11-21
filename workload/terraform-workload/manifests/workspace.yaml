@@ -2,11 +2,15 @@ apiVersion: app.terraform.io/v1alpha2
 kind: Workspace
 metadata:
   name: kubernetes-operator-demo
+  annotations:
+    workspace.app.terraform.io/run-type: "apply"
 
 spec:
   name: kubernetes-operator-demo
   organization: rli-personal
-  project: poc-gitops-terraform
+  project:
+    name: poc-gitops-terraform
+
   deletionPolicy: destroy
   applyMethod: auto
   executionMode: remote
@@ -15,9 +19,10 @@ spec:
       name: terraform-operator-token
       key: token
 
-#  workingDirectory: terraform/sample-s3-bucket
-#  versionControl:
-#    repository: https://github.com/robinlioret/poc-iac-gitops-terraform.git
+  workingDirectory: terraform/sample-s3-bucket
+  versionControl:
+    oAuthTokenID: <redacted>
+    repository: robinlioret/poc-iac-gitops-terraform
 
   terraformVariables:
     - name: aws_region
@@ -45,4 +50,3 @@ spec:
         secretKeyRef:
           name: aws-terraform
           key: sak
-
