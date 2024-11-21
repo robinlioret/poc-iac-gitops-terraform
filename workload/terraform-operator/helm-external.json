@@ -2,5 +2,5 @@
   "dNamespace": "terraform-operator-system",
   "dRepoURL": "https://helm.releases.hashicorp.com",
   "dTargetRevision": "2.7.0",
-  "dChartName": "terraform"
+  "dChartName": "hcp-terraform-operator"
 }
