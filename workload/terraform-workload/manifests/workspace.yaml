@@ -2,11 +2,41 @@ apiVersion: app.terraform.io/v1alpha2
 kind: Workspace
 metadata:
   name: kubernetes-operator-demo
+
 spec:
   name: kubernetes-operator-demo
   organization: rli-personal
+  deletionPolicy: destroy
+  applyMethod: auto
+  executionMode: remote
   token:
     secretKeyRef:
       name: terraform-operator-token
       key: token
-  deletionPolicy: destroy
+
+  workingDirectory: terraform/sample-s3-bucket
+  versionControl:
+    repository: https://github.com/robinlioret/poc-iac-gitops-terraform.git
+    speculativePlans: true
+
+  terraformVariables:
+    - name: aws_region
+      value: eu-west-3
+
+    - name: bucket_name
+      value: yolo-from-kubernetes-manifest-through-argocd
+
+    - name: aws_access_key_id
+      sensitive: true
+      valueFrom:
+        secretKeyRef:
+          name: aws-terraform
+          key: aki
+
+    - name: aws_secret_access_key
+      sensitive: true
+      valueFrom:
+        secretKeyRef:
+          name: aws-terraform
+          key: sak
+
