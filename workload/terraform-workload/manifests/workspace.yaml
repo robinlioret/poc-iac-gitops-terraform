@@ -14,9 +14,9 @@ spec:
       name: terraform-operator-token
       key: token
 
-  workingDirectory: terraform/sample-s3-bucket
-  versionControl:
-    repository: https://github.com/robinlioret/poc-iac-gitops-terraform.git
+#  workingDirectory: terraform/sample-s3-bucket
+#  versionControl:
+#    repository: https://github.com/robinlioret/poc-iac-gitops-terraform.git
 
   terraformVariables:
     - name: aws_region
