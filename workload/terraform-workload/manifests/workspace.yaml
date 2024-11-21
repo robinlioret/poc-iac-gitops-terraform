@@ -1,18 +1,12 @@
 apiVersion: app.terraform.io/v1alpha2
 kind: Workspace
 metadata:
-  name: sample-workspace
+  name: kubernetes-operator-demo
 spec:
-  name: argocd-workspace
   organization: rli-personal
   token:
     secretKeyRef:
-      name: terraform-organization-token
+      name: terraform-operator-token
       key: token
-  applyMethod: auto
-  allowDestroyPlan: auto
-  description: "ArgoCD generated workspace"
-  executionMode: remote
+  name: kubernetes-operator-demo
   deletionPolicy: destroy
-  project:
-    name: poc-gitops-terraform
