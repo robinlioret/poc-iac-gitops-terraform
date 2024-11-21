@@ -6,6 +6,7 @@ metadata:
 spec:
   name: kubernetes-operator-demo
   organization: rli-personal
+  project: poc-gitops-terraform
   deletionPolicy: destroy
   applyMethod: auto
   executionMode: remote
