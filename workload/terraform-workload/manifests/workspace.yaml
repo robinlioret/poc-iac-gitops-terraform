@@ -1,4 +1,4 @@
-apiVersion: app.terraform.io/v1alpha1
+apiVersion: app.terraform.io/v1alpha2
 kind: Workspace
 metadata:
   name: sample-workspace
@@ -12,6 +12,7 @@ spec:
   applyMethod: auto
   allowDestroyPlan: auto
   description: "ArgoCD generated workspace"
+  executionMode: remote
   deletionPolicy: destroy
   project:
     name: poc-gitops-terraform
