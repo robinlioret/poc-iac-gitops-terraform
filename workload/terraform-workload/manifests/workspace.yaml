@@ -20,12 +20,17 @@ spec:
 
   terraformVariables:
     - name: aws_region
+      hcl: false
+      sensitive: false
       value: eu-west-3
 
     - name: bucket_name
+      hcl: false
+      sensitive: false
       value: yolo-from-kubernetes-manifest-through-argocd
 
     - name: aws_access_key_id
+      hcl: false
       sensitive: true
       valueFrom:
         secretKeyRef:
@@ -33,6 +38,7 @@ spec:
           key: aki
 
     - name: aws_secret_access_key
+      hcl: false
       sensitive: true
       valueFrom:
         secretKeyRef:
