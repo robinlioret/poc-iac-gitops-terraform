@@ -3,10 +3,10 @@ kind: Workspace
 metadata:
   name: kubernetes-operator-demo
 spec:
+  name: kubernetes-operator-demo
   organization: rli-personal
   token:
     secretKeyRef:
       name: terraform-operator-token
       key: token
-  name: kubernetes-operator-demo
   deletionPolicy: destroy
